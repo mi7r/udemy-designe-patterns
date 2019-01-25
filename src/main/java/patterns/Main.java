@@ -14,9 +14,15 @@ public class Main {
         Email email = new Email();
         MobileApp mobileApp = new MobileApp();
 
-        textMessage.updateOrderStatus(order);
-        email.updateOrderStatus(order);
-        mobileApp.updateOrderStatus(order);
+        order.registerObserver(textMessage);
+        order.registerObserver(mobileApp);
+        order.registerObserver(email);
 
+        order.norifyObservers();
+        System.out.println("-----------");
+        order.changeOrderStatus(OrderStatus.SENT);
+        order.unregisterObserver(mobileApp);
+        System.out.println("-----------");
+        order.norifyObservers();
     }
 }

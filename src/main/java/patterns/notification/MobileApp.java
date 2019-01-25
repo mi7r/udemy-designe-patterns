@@ -2,9 +2,9 @@ package patterns.notification;
 
 import patterns.order.Order;
 
-public class MobileApp {
+public class MobileApp implements Observer {
 
-    public void updateOrderStatus(Order order) {
+    public void update(Order order) {
         System.out.println("MobileApp - Order number: " + order.getOrderNumber() + " changed status to: " + order.getOrderStatus());
     }
 }
