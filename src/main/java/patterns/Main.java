@@ -1,20 +1,19 @@
 package patterns;
 
-import patterns.units.Factory;
-import patterns.units.Unit;
-import patterns.units.UnitFactory;
-import patterns.units.UnitType;
+import patterns.units.*;
 
 public class Main {
     public static void main(String[] args) {
+        Factory blueFacotry = new BlueFactory();
+        Factory redFactory = new RedFactory();
 
-        Factory factory = new UnitFactory();
+        MechanizedUnits redTank = redFactory.createMechanizedUnit(UnitType.TANK);
+        InfantryUnit redInfantry = redFactory.createInfantryUnit(UnitType.RIFLEMAN);
+        AirUnit redF16 = redFactory.createAirUnit(UnitType.F16);
 
-        Unit tiger = factory.createUnit(UnitType.TANK);
-        Unit warrior = factory.createUnit(UnitType.RIFLEMAN);
+        MechanizedUnits blueTank = blueFacotry.createMechanizedUnit(UnitType.TANK);
+        InfantryUnit blueInfantry = blueFacotry.createInfantryUnit(UnitType.RIFLEMAN);
+        AirUnit blueF16 = blueFacotry.createAirUnit(UnitType.F16);
 
-
-        System.out.println(tiger);
-        System.out.println(warrior);
     }
 }

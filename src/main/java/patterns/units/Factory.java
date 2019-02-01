@@ -1,5 +1,9 @@
 package patterns.units;
 
-public abstract class Factory {
-    abstract public Unit createUnit(UnitType unitType);
+abstract public class Factory {
+    abstract public InfantryUnit createInfantryUnit(UnitType unitType);
+
+    abstract public MechanizedUnits createMechanizedUnit(UnitType unitType);
+
+    abstract public AirUnit createAirUnit(UnitType unitType);
 }

@@ -2,5 +2,6 @@ package patterns.units;
 
 public enum UnitType {
     RIFLEMAN,
-    TANK
+    TANK,
+    F16
 }
