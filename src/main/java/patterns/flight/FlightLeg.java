@@ -27,22 +27,13 @@ public class FlightLeg {
 
         private String flightStart;
         private String flightEnd;
-        private boolean delayed = false;
+        private boolean delayed;
         private double price;
 
-        public FlightLegBuilder setFlightStart(String flightFrom) {
+        public FlightLegBuilder (String flightFrom, String flightEnd) {
             this.flightStart = flightFrom;
-            return this;
-        }
-
-        public FlightLegBuilder setFlightEnd(String flightEnd) {
             this.flightEnd = flightEnd;
-            return this;
-        }
-
-        public FlightLegBuilder setDelayedStatus(boolean delayed){
-            this.delayed = delayed;
-            return this;
+            this.delayed = false;
         }
 
         public FlightLegBuilder setFlightPrice(double price) {

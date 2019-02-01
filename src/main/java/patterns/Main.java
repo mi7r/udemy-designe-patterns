@@ -4,20 +4,13 @@ import patterns.flight.FlightLeg;
 
 public class Main {
     public static void main(String[] args) {
-        FlightLeg flightLeg = new FlightLeg.FlightLegBuilder()
-                .setFlightStart("Gdansk")
-                .setFlightEnd("Wrocław")
-                .setFlightPrice(499.90)
-                .build();
+        FlightLeg flightLeg = new FlightLeg.FlightLegBuilder("Wrocław", "Gdańsk")
+                .setFlightPrice(499.90).build();
 
         System.out.println(flightLeg);
 
-        FlightLeg flightLeg1 = new FlightLeg.FlightLegBuilder()
-                .setFlightStart("Wrocław")
-                .setFlightEnd("Gdańsk")
-                .setFlightPrice(99.99)
-                .setDelayedStatus(true)
-                .build();
+        FlightLeg flightLeg1 = new FlightLeg.FlightLegBuilder("Gdańsk", "Wrocław")
+                .setFlightPrice(99.99).build();
 
         System.out.println(flightLeg1);
     }
