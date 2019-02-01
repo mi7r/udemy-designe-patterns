@@ -5,7 +5,7 @@ public abstract class Unit {
     private int exp;
     private int dmgDone;
 
-    public Unit(int hp, int exp, int dmgDone) {
+    Unit(int hp, int exp, int dmgDone) {
         this.hp = hp;
         this.exp = exp;
         this.dmgDone = dmgDone;
@@ -21,5 +21,14 @@ public abstract class Unit {
 
     public int getDmgDone() {
         return dmgDone;
+    }
+
+    @Override
+    public String toString() {
+        return "Unit{" +
+                "hp=" + hp +
+                ", exp=" + exp +
+                ", dmgDone=" + dmgDone +
+                '}';
     }
 }
