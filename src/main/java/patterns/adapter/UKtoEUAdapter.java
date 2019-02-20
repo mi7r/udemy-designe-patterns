@@ -8,7 +8,7 @@ public class UKtoEUAdapter implements EuDevice {
         this.device = device;
     }
 
-    public void powerOn() {
-        device.powerOn();
+    public void powerOnEu() {
+        device.powerOnUk();
     }
 }

@@ -1,5 +1,5 @@
 package patterns.adapter;
 
 public interface UKDevice {
-    void powerOn();
+    void powerOnUk();
 }

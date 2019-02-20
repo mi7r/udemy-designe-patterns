@@ -4,27 +4,26 @@ import patterns.adapter.*;
 
 public class Main {
     public static void main(String[] args) {
+        EuSocket euSocket = new EuSocket();
+
+        UkSocket ukSocket = new UkSocket();
 
         EuDevice euRadio = new EuDevice() {
-            public void powerOn() {
+            public void powerOnEu() {
                 System.out.println("music play in Europe");
             }
         };
 
-        EuSocket euSocket = new EuSocket();
-        euSocket.plugIn(euRadio);
 
         UKDevice ukRadio = new UKDevice() {
-            public void powerOn() {
+            public void powerOnUk() {
                 System.out.println("music plays in UK");
             }
         };
 
-        UkSocket ukSocket = new UkSocket();
-        ukSocket.plugIn(ukRadio);
-
-        UKtoEUAdapter uKtoEUAdapter = new UKtoEUAdapter(ukRadio);
-        euSocket.plugIn(uKtoEUAdapter);
+        TwoWayAdapter twoWayAdapter = new TwoWayAdapter(ukRadio, euRadio);
+        euSocket.plugIn(twoWayAdapter);
+        ukSocket.plugIn(twoWayAdapter);
 
     }
 }
